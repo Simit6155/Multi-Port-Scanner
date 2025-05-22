@@ -55,4 +55,4 @@ Scanning systems without permission is illegal and unethical.
 Always get authorization before using this on a network you do not own.
 
 📫 Author
-Made by @Redsimit
+@Redsimit
