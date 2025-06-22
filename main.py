@@ -1,75 +1,45 @@
 import socket
 import colorama
 from colorama import Fore,init
-
 init(autoreset=True)
 
-print(Fore.RED + "This Multi-Port tester was made by @Redsimit ")
-ip = "127.0.0.1"
-ports = [4444, 22, 8080, 443, 21, 22, 23, 25, 53, 80, 31337]
 
-try:
-    socket.create_connection((ip, ports[0]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[0]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[0]} closed ")
 
-try:
-    socket.create_connection((ip, ports[1]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[1]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[1]} closed ")
 
-try:
-    socket.create_connection((ip, ports[2]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[2]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[2]} closed ")
+print(Fore.GREEN + """
+ ▄▄       ▄▄  ▄         ▄  ▄       ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄  ▄  ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+▐░░▌     ▐░░▌▐░▌       ▐░▌▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌▐░▌▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░▌░▌   ▐░▐░▌▐░▌       ▐░▌▐░▌      ▀▀▀▀█░█▀▀▀▀  ▀▀▀▀█░█▀▀▀▀  ▐░▐░▌░▌ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌ ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌
+▐░▌▐░▌ ▐░▌▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌       ▐░ ░▌  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌     ▐░▌     ▐░▌          ▐░▌       ▐░▌
+▐░▌ ▐░▐░▌ ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌      ▄▄█░█▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌     ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌
+▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌     ▐░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+▐░▌   ▀   ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌      ▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌▐░█▀▀▀▀█░█▀▀      ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ 
+▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌       ▐░ ░▌  ▐░▌          ▐░▌       ▐░▌▐░▌     ▐░▌       ▐░▌     ▐░▌          ▐░▌     ▐░▌  
+▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▄▄▄▄█░█▄▄▄▄  ▐░▐░▌░▌ ▐░▌          ▐░█▄▄▄▄▄▄▄█░▌▐░▌      ▐░▌      ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌      ▐░▌ 
+▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌     ▐░░░░░░░░░░░▌▐░▌▐░▌▐░▌▐░▌          ▐░░░░░░░░░░░▌▐░▌       ▐░▌     ▐░▌     ▐░░░░░░░░░░░▌▐░▌       ▐░▌
+ ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀  ▀  ▀  ▀            ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀       ▀       ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀ 
 
-try:
-    socket.create_connection((ip, ports[3]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[3]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[3]} closed ")
+            """)
 
-try:
-    socket.create_connection((ip, ports[4]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[4]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[4]} closed ")
+        print(
+            Fore.LIGHTGREEN_EX + "This Multi-Port tester was made by @Redsimit ")
+        ip = input(Fore.GREEN + "Enter IP to scan: ")
+        ports = [4444, 445, 443, 8080,
+                 20, 21, 22, 23, 25, 53,
+                 68, 80, 110, 123, 135, 67,
+                 137, 138, 139, 143, 161,
+                 162, 389, 443, 445, 465,
+                 514, 587, 636, 993, 995,
+                 1080, 1433, 1521, 1723,
+                 2049, 2121, 3306, 3389,
+                 5432, 5900, 6000, 8080,
+                 8443, 8888, 10000, 20000,
+                 32768, 49152, 65535]
 
-try:
-    socket.create_connection((ip, ports[5]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[5]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[5]} closed ")
-
-try:
-    socket.create_connection((ip, ports[6]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[6]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[6]} closed ")
-
-try:
-    socket.create_connection((ip, ports[7]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[7]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[7]} closed ")
-
-try:
-    socket.create_connection((ip, ports[8]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[8]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[8]} closed ")
-
-try:
-    socket.create_connection((ip, ports[9]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[9]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[9]} closed ")
-
-try:
-    socket.create_connection((ip, ports[10]), timeout=3)
-    print(Fore.GREEN + f"Port {ports[10]} open ")
-except socket.error:
-    print(Fore.GREEN + f"Port {ports[10]} closed ")
+        for port in ports:
+            try:
+                socket.create_connection((ip, port),
+                                         timeout=1)  # i recommend changing the timeout to 2 or 3 if you want to be sure
+                print(Fore.RED + f"Port {port} open ")
+            except socket.error:
+                print(Fore.LIGHTBLACK_EX + f"Port {port} closed ")
